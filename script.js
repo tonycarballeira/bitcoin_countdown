@@ -20,7 +20,7 @@ request.onload = function(){
     jsonObject = JSON.parse(request.response);
     const blocksLeft = 840000 - jsonObject.n_blocks_total;
     const minsBetween = jsonObject.minutes_between_blocks;
-    const minsLeft = blocksLeft * minsBetween;
+    const minsLeft = blocksLeft * 9.267;
     secondsLeft = minsLeft * 60;
     console.log(jsonObject.minutes_between_blocks);
 }
@@ -47,8 +47,12 @@ setTime();
 setInterval(setTime, 1000);
 
 function formatTime(time) {
-    if (time < 10 && time > 0) 
+    if (time < 10 && time > 0) {
         return "" + 0 + time;
-    else
+    }   else if (time < 0) {
+        return "";
+    } else {
         return time;
+    }
+        
 }
