@@ -25,8 +25,6 @@ request.onload = function(){
     console.log(jsonObject.minutes_between_blocks);
 }
 
-//modulus operator % returns remainder of the division of two integers.
-
 function setTime(){
     secondsLeft = secondsLeft - 1;
     
